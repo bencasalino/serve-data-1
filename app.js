@@ -52,7 +52,7 @@ function findById(data, id){
 app.get("/:id", function (request, response) {
     var record = findById(data, request.params.id);
     if (!record){
-        response.status = 200;
+        response.status(404);
         response.json({
             error: {
             message: "No record found!"
